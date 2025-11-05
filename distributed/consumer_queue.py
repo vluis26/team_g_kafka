@@ -8,7 +8,7 @@ consumer = KafkaConsumer(
     "transactions",
     bootstrap_servers="localhost:9092",
     auto_offset_reset="earliest",
-    group_id="worker-group",  # same group for queue semantics
+    group_id="worker-group",
     enable_auto_commit=True,
     value_deserializer=lambda m: json.loads(m.decode("utf-8")),
 )
